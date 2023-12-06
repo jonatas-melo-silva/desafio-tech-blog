@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 import { ClassNameValue, twMerge } from 'tailwind-merge'
 
 const base =
-  'h-11 overflow-hidden text-sm font-normal leading-tight' as ClassNameValue
+  'overflow-hidden text-sm font-normal leading-tight lg:text-lg lg:leading-relaxed' as ClassNameValue
 
 export type DescriptionProps = ComponentProps<'p'>
 

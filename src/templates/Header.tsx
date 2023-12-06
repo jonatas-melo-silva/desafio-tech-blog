@@ -12,15 +12,18 @@ export function Header({ className, ...props }: HeaderProps) {
     <H.Root className={twMerge(base, className)} {...props}>
       <H.Wrapper>
         <H.Image src={Image} alt="image" />
-        <H.Title>
-          Encontre os <span className="text-violet-500">melhores artigos</span>{' '}
-          de programação em um só lugar
-        </H.Title>
-        <H.Subtitle>
-          Explore o topo da programação em um só lugar! Seu destino único para
-          dicas e tendências atuais.
-        </H.Subtitle>
-        <Button>Buscar artigos</Button>
+        <H.Content>
+          <H.Title>
+            Encontre os{' '}
+            <span className="text-violet-500">melhores artigos</span> de
+            programação em um só lugar
+          </H.Title>
+          <H.Subtitle>
+            Explore o topo da programação em um só lugar! Seu destino único para
+            dicas e tendências atuais.
+          </H.Subtitle>
+          <Button className="md:w-fit">Buscar artigos</Button>
+        </H.Content>
       </H.Wrapper>
     </H.Root>
   )
