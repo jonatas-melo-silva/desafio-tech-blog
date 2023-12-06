@@ -1,34 +1,34 @@
 import { ComponentProps } from 'react'
 import { ClassNameValue, twMerge } from 'tailwind-merge'
-import { Button, Input, Textarea } from '../components'
+import { Button, Form, Footer as F } from '../components'
 
-const base = 'flex w-full justify-center bg-violet-50' as ClassNameValue
+const base = '' as ClassNameValue
 
 export type FooterProps = ComponentProps<'footer'>
 
 export function Footer({ className, ...props }: FooterProps) {
   return (
-    <footer className={twMerge(base, className)} {...props}>
-      <section className="flex w-full flex-col justify-center gap-12 px-6 py-16">
-        <h2 className="text-3xl font-semibold">Entre em contato</h2>
+    <F.Root className={twMerge(base, className)} {...props}>
+      <F.Wrapper>
+        <F.Title>Entre em contato</F.Title>
 
         <form action="#" className="flex w-full flex-col justify-center gap-10">
           <fieldset className="flex w-full flex-col gap-6">
-            <Input.Control
+            <Form.Input
               required
               placeholder="Nome"
               type="text"
               name="name"
               id="name"
             />
-            <Input.Control
+            <Form.Input
               required
               placeholder="Email"
               type="email"
               name="email"
               id="email"
             />
-            <Textarea.Control
+            <Form.Textarea
               required
               placeholder="Assunto da mensagem"
               name="message"
@@ -39,7 +39,7 @@ export function Footer({ className, ...props }: FooterProps) {
             entrar em contato
           </Button>
         </form>
-      </section>
-    </footer>
+      </F.Wrapper>
+    </F.Root>
   )
 }

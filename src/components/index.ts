@@ -1,5 +1,6 @@
 import { Button, ButtonProps } from './Button'
+import * as Form from './Form'
+import * as Footer from './Footer'
 
-export { Input, Textarea } from './Form'
-export { Button }
+export { Button, Form, Footer }
 export type { ButtonProps }

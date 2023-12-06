@@ -1,4 +1,5 @@
-import * as Input from './Input'
-import * as Textarea from './Textarea'
+import { Input, InputProps } from './Input'
+import { Textarea, TextareaProps } from './Textarea'
 
 export { Input, Textarea }
+export type { InputProps, TextareaProps }
