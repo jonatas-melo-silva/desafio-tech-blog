@@ -1,26 +1,21 @@
 import { ComponentProps } from 'react'
 import { ClassNameValue, twMerge } from 'tailwind-merge'
 import { Card as C } from '../components'
+import { Article } from '../types/Article'
 
 const base = '' as ClassNameValue
 
 export type CardProps = ComponentProps<'a'> & {
-  alt: string
-  src: string
+  article: Article
 }
 
-export function Card({ alt, src, className, ...props }: CardProps) {
+export function Card({ article, className, ...props }: CardProps) {
   return (
     <C.Root className={twMerge(base, className)} {...props}>
-      <C.Image src={src} alt={alt} />
+      <C.Image src={article.image} alt="" />
       <C.Content>
-        <C.Title>
-          O que é linguagem de programação? Conheça as principais
-        </C.Title>
-        <C.Description>
-          Uma das mais populares vertentes da tecnologia da informação, a área
-          de...
-        </C.Description>
+        <C.Title>{article.title}</C.Title>
+        <C.Description>{article.description}</C.Description>
       </C.Content>
     </C.Root>
   )

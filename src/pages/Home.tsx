@@ -1,5 +1,6 @@
 import { ComponentProps } from 'react'
 import { ClassNameValue, twMerge } from 'tailwind-merge'
+import { articles } from '../store'
 import { Card } from '../templates'
 
 const base =
@@ -12,36 +13,9 @@ export function Home({ className, ...props }: HomeProps) {
     <section className={twMerge(base, className)} {...props}>
       <h2 className="text-2xl font-semibold">Artigos recomendados</h2>
       <div className="grid w-full grid-cols-1 gap-8">
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=0"
-          alt="image"
-        />
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=1"
-          alt="image"
-        />
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=2"
-          alt="image"
-        />
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=3"
-          alt="image"
-        />
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=4"
-          alt="image"
-        />
-        <Card
-          href="#"
-          src="https://source.unsplash.com/425x176/?programming=5"
-          alt="image"
-        />
+        {articles?.map((article) => {
+          return <Card key={article.id} href="#" article={article} />
+        })}
       </div>
     </section>
   )
